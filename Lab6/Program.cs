@@ -12,12 +12,14 @@ internal static class Program
         ApplicationConfiguration.Initialize();
         try
         {
-            var hospitalService = new HospitalService(new JsonHospitalDao());
-            Application.Run(new MainForm(hospitalService));
+            Lab6Tests.HospitalTests.Start();
+
+            //var hospitalService = new HospitalService(new JsonHospitalDao());
+            //Application.Run(new MainForm(hospitalService));
         }
         catch (Exception ex)
-        {
-            MessageBox.Show($"Не удалось запустить приложение или загрузить данные.\n\n{ex.Message}", "Ошибка запуска", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                MessageBox.Show($"Не удалось запустить приложение или загрузить данные.\n\n{ex.Message}", "Ошибка запуска", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
